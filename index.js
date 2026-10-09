@@ -16,6 +16,14 @@ app.get('/',(req,res)=>{
     res.send("hello from interview service");
 })
 
+
+app.get("/health", (_req, res) => {
+    res.status(200).json({
+        status: "ok",
+        service: "interview",
+    });
+});
+
 app.use("/",interviewRouter)
 
 
